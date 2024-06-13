@@ -2,10 +2,24 @@ syntax = "proto3";
 
 package helloworld;
 
+message ComplexType {
+  int64 id = 1;
+  string name = 2;
+}
+
 // Define the Hello service
 service Greeter {
   // Sends a greeting
   rpc SayHello (HelloRequest) returns (HelloReply) {}
+
+  rpc VoidFunction (VoidRequest) returns (VoidReply) {}
+
+  rpc LongFunction (LongOperationRequest) returns (LongOperationReply) {}
+  
+  rpc StringOperation (StringOperationRequest) returns (StringOperationReply) {}
+
+  rpc ComplexOperation (ComplexOperationRequest) returns (ComplexOperationReply) {}
+
 }
 
 // The request message containing the user's name
@@ -16,4 +30,39 @@ message HelloRequest {
 // The response message containing the greetings
 message HelloReply {
   string message = 1;
+}
+
+message VoidRequest {}
+
+message VoidReply {}
+
+message LongOperationRequest {
+  int64 arg1 = 1;
+  int64 arg2 = 2;
+  int64 arg3 = 3;
+  int64 arg4 = 4;
+  int64 arg5 = 5;
+  int64 arg6 = 6;
+  int64 arg7 = 7;
+  int64 arg8 = 8;
+}
+
+message LongOperationReply {
+  int64 result = 1;
+}
+
+message StringOperationRequest {
+  string input_string = 1;
+}
+
+message StringOperationReply {
+  string output_string = 1;
+}
+
+message ComplexOperationRequest {
+  ComplexType input_complex = 1;
+}
+
+message ComplexOperationReply {
+  ComplexType output_complex = 1;
 }

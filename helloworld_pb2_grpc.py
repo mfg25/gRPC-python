@@ -45,6 +45,26 @@ class GreeterStub(object):
                 request_serializer=helloworld__pb2.HelloRequest.SerializeToString,
                 response_deserializer=helloworld__pb2.HelloReply.FromString,
                 _registered_method=True)
+        self.VoidFunction = channel.unary_unary(
+                '/helloworld.Greeter/VoidFunction',
+                request_serializer=helloworld__pb2.VoidRequest.SerializeToString,
+                response_deserializer=helloworld__pb2.VoidReply.FromString,
+                _registered_method=True)
+        self.LongFunction = channel.unary_unary(
+                '/helloworld.Greeter/LongFunction',
+                request_serializer=helloworld__pb2.LongOperationRequest.SerializeToString,
+                response_deserializer=helloworld__pb2.LongOperationReply.FromString,
+                _registered_method=True)
+        self.StringOperation = channel.unary_unary(
+                '/helloworld.Greeter/StringOperation',
+                request_serializer=helloworld__pb2.StringOperationRequest.SerializeToString,
+                response_deserializer=helloworld__pb2.StringOperationReply.FromString,
+                _registered_method=True)
+        self.ComplexOperation = channel.unary_unary(
+                '/helloworld.Greeter/ComplexOperation',
+                request_serializer=helloworld__pb2.ComplexOperationRequest.SerializeToString,
+                response_deserializer=helloworld__pb2.ComplexOperationReply.FromString,
+                _registered_method=True)
 
 
 class GreeterServicer(object):
@@ -58,6 +78,30 @@ class GreeterServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def VoidFunction(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def LongFunction(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def StringOperation(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def ComplexOperation(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
 
 def add_GreeterServicer_to_server(servicer, server):
     rpc_method_handlers = {
@@ -65,6 +109,26 @@ def add_GreeterServicer_to_server(servicer, server):
                     servicer.SayHello,
                     request_deserializer=helloworld__pb2.HelloRequest.FromString,
                     response_serializer=helloworld__pb2.HelloReply.SerializeToString,
+            ),
+            'VoidFunction': grpc.unary_unary_rpc_method_handler(
+                    servicer.VoidFunction,
+                    request_deserializer=helloworld__pb2.VoidRequest.FromString,
+                    response_serializer=helloworld__pb2.VoidReply.SerializeToString,
+            ),
+            'LongFunction': grpc.unary_unary_rpc_method_handler(
+                    servicer.LongFunction,
+                    request_deserializer=helloworld__pb2.LongOperationRequest.FromString,
+                    response_serializer=helloworld__pb2.LongOperationReply.SerializeToString,
+            ),
+            'StringOperation': grpc.unary_unary_rpc_method_handler(
+                    servicer.StringOperation,
+                    request_deserializer=helloworld__pb2.StringOperationRequest.FromString,
+                    response_serializer=helloworld__pb2.StringOperationReply.SerializeToString,
+            ),
+            'ComplexOperation': grpc.unary_unary_rpc_method_handler(
+                    servicer.ComplexOperation,
+                    request_deserializer=helloworld__pb2.ComplexOperationRequest.FromString,
+                    response_serializer=helloworld__pb2.ComplexOperationReply.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -95,6 +159,114 @@ class Greeter(object):
             '/helloworld.Greeter/SayHello',
             helloworld__pb2.HelloRequest.SerializeToString,
             helloworld__pb2.HelloReply.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def VoidFunction(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/helloworld.Greeter/VoidFunction',
+            helloworld__pb2.VoidRequest.SerializeToString,
+            helloworld__pb2.VoidReply.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def LongFunction(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/helloworld.Greeter/LongFunction',
+            helloworld__pb2.LongOperationRequest.SerializeToString,
+            helloworld__pb2.LongOperationReply.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def StringOperation(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/helloworld.Greeter/StringOperation',
+            helloworld__pb2.StringOperationRequest.SerializeToString,
+            helloworld__pb2.StringOperationReply.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def ComplexOperation(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/helloworld.Greeter/ComplexOperation',
+            helloworld__pb2.ComplexOperationRequest.SerializeToString,
+            helloworld__pb2.ComplexOperationReply.FromString,
             options,
             channel_credentials,
             insecure,
