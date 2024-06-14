@@ -20,6 +20,8 @@ service Greeter {
 
   rpc ComplexOperation (ComplexOperationRequest) returns (ComplexOperationReply) {}
 
+  rpc MultipleString (MultipleStringRequest) returns (MultipleStringReply) {}
+
 }
 
 // The request message containing the user's name
@@ -65,4 +67,22 @@ message ComplexOperationRequest {
 
 message ComplexOperationReply {
   ComplexType output_complex = 1;
+}
+
+message MultipleStringRequest{
+  string s1 = 1;
+  string s2 = 2;
+  string s3 = 3;
+  string s4 = 4;
+  string s5 = 5;
+  string s6 = 6;
+}
+
+message MultipleStringReply{
+  string s1 = 1;
+  string s2 = 2;
+  string s3 = 3;
+  string s4 = 4;
+  string s5 = 5;
+  string s6 = 6;
 }

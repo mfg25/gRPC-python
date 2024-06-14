@@ -8,7 +8,6 @@ class Greeter(helloworld_pb2_grpc.GreeterServicer):
         return helloworld_pb2.HelloReply(message='Hello, %s!' % request.name)
     
     def VoidFunction(self, request, context):
-        print("Void function called.")
         return helloworld_pb2.VoidReply()
     
     def LongFunction(self, request, context):
@@ -27,6 +26,9 @@ class Greeter(helloworld_pb2_grpc.GreeterServicer):
             name=input_complex.name.upper(),
         )
         return helloworld_pb2.ComplexOperationReply(output_complex=output_complex)
+    
+    def MultipleString(self, request, context):
+        return helloworld_pb2.MultipleStringReply(s1=request.s1, s2=request.s2, s3=request.s3, s4=request.s4, s5=request.s5, s6=request.s6)
 
 
 def serve():

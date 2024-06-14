@@ -65,6 +65,11 @@ class GreeterStub(object):
                 request_serializer=helloworld__pb2.ComplexOperationRequest.SerializeToString,
                 response_deserializer=helloworld__pb2.ComplexOperationReply.FromString,
                 _registered_method=True)
+        self.MultipleString = channel.unary_unary(
+                '/helloworld.Greeter/MultipleString',
+                request_serializer=helloworld__pb2.MultipleStringRequest.SerializeToString,
+                response_deserializer=helloworld__pb2.MultipleStringReply.FromString,
+                _registered_method=True)
 
 
 class GreeterServicer(object):
@@ -102,6 +107,12 @@ class GreeterServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def MultipleString(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
 
 def add_GreeterServicer_to_server(servicer, server):
     rpc_method_handlers = {
@@ -129,6 +140,11 @@ def add_GreeterServicer_to_server(servicer, server):
                     servicer.ComplexOperation,
                     request_deserializer=helloworld__pb2.ComplexOperationRequest.FromString,
                     response_serializer=helloworld__pb2.ComplexOperationReply.SerializeToString,
+            ),
+            'MultipleString': grpc.unary_unary_rpc_method_handler(
+                    servicer.MultipleString,
+                    request_deserializer=helloworld__pb2.MultipleStringRequest.FromString,
+                    response_serializer=helloworld__pb2.MultipleStringReply.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -267,6 +283,33 @@ class Greeter(object):
             '/helloworld.Greeter/ComplexOperation',
             helloworld__pb2.ComplexOperationRequest.SerializeToString,
             helloworld__pb2.ComplexOperationReply.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def MultipleString(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/helloworld.Greeter/MultipleString',
+            helloworld__pb2.MultipleStringRequest.SerializeToString,
+            helloworld__pb2.MultipleStringReply.FromString,
             options,
             channel_credentials,
             insecure,
