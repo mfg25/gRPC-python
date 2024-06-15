@@ -27,6 +27,22 @@ class Greeter(helloworld_pb2_grpc.GreeterServicer):
         )
         return helloworld_pb2.ComplexOperationReply(output_complex=output_complex)
     
+    def ComplexOperation2(self, request, context):
+        input_complex = request.input_complex
+        output_complex = helloworld_pb2.ComplexType2(
+            id=input_complex.id + 1,
+            age=input_complex.age,
+            address=input_complex.address,
+            name=input_complex.name.upper(),
+            food=input_complex.food,
+            color=input_complex.color,
+            game=input_complex.game,
+            sport=input_complex.sport,
+            height=input_complex.height,
+            nickname=input_complex.nickname
+        )
+        return helloworld_pb2.ComplexOperation2Reply(output_complex=output_complex)
+    
     def MultipleString(self, request, context):
         return helloworld_pb2.MultipleStringReply(s1=request.s1, s2=request.s2, s3=request.s3, s4=request.s4, s5=request.s5, s6=request.s6)
 

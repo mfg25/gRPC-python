@@ -65,6 +65,11 @@ class GreeterStub(object):
                 request_serializer=helloworld__pb2.ComplexOperationRequest.SerializeToString,
                 response_deserializer=helloworld__pb2.ComplexOperationReply.FromString,
                 _registered_method=True)
+        self.ComplexOperation2 = channel.unary_unary(
+                '/helloworld.Greeter/ComplexOperation2',
+                request_serializer=helloworld__pb2.ComplexOperation2Request.SerializeToString,
+                response_deserializer=helloworld__pb2.ComplexOperation2Reply.FromString,
+                _registered_method=True)
         self.MultipleString = channel.unary_unary(
                 '/helloworld.Greeter/MultipleString',
                 request_serializer=helloworld__pb2.MultipleStringRequest.SerializeToString,
@@ -107,6 +112,12 @@ class GreeterServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def ComplexOperation2(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
     def MultipleString(self, request, context):
         """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
@@ -140,6 +151,11 @@ def add_GreeterServicer_to_server(servicer, server):
                     servicer.ComplexOperation,
                     request_deserializer=helloworld__pb2.ComplexOperationRequest.FromString,
                     response_serializer=helloworld__pb2.ComplexOperationReply.SerializeToString,
+            ),
+            'ComplexOperation2': grpc.unary_unary_rpc_method_handler(
+                    servicer.ComplexOperation2,
+                    request_deserializer=helloworld__pb2.ComplexOperation2Request.FromString,
+                    response_serializer=helloworld__pb2.ComplexOperation2Reply.SerializeToString,
             ),
             'MultipleString': grpc.unary_unary_rpc_method_handler(
                     servicer.MultipleString,
@@ -283,6 +299,33 @@ class Greeter(object):
             '/helloworld.Greeter/ComplexOperation',
             helloworld__pb2.ComplexOperationRequest.SerializeToString,
             helloworld__pb2.ComplexOperationReply.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def ComplexOperation2(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/helloworld.Greeter/ComplexOperation2',
+            helloworld__pb2.ComplexOperation2Request.SerializeToString,
+            helloworld__pb2.ComplexOperation2Reply.FromString,
             options,
             channel_credentials,
             insecure,
