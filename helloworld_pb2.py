@@ -14,7 +14,7 @@ _sym_db = _symbol_database.Default()
 
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x10helloworld.proto\x12\nhelloworld\"\'\n\x0b\x43omplexType\x12\n\n\x02id\x18\x01 \x01(\x03\x12\x0c\n\x04name\x18\x02 \x01(\t\"\xa2\x01\n\x0c\x43omplexType2\x12\n\n\x02id\x18\x01 \x01(\x03\x12\x0b\n\x03\x61ge\x18\x02 \x01(\x03\x12\x0f\n\x07\x61\x64\x64ress\x18\x03 \x01(\t\x12\x0c\n\x04name\x18\x04 \x01(\t\x12\x0c\n\x04\x66ood\x18\x05 \x01(\t\x12\r\n\x05\x63olor\x18\x06 \x01(\t\x12\x0c\n\x04game\x18\x07 \x01(\t\x12\r\n\x05sport\x18\x08 \x01(\t\x12\x0e\n\x06height\x18\t \x01(\t\x12\x10\n\x08nickname\x18\n \x01(\t\"\x1c\n\x0cHelloRequest\x12\x0c\n\x04name\x18\x01 \x01(\t\"\x1d\n\nHelloReply\x12\x0f\n\x07message\x18\x01 \x01(\t\"\r\n\x0bVoidRequest\"\x0b\n\tVoidReply\"\x86\x01\n\x14LongOperationRequest\x12\x0c\n\x04\x61rg1\x18\x01 \x01(\x03\x12\x0c\n\x04\x61rg2\x18\x02 \x01(\x03\x12\x0c\n\x04\x61rg3\x18\x03 \x01(\x03\x12\x0c\n\x04\x61rg4\x18\x04 \x01(\x03\x12\x0c\n\x04\x61rg5\x18\x05 \x01(\x03\x12\x0c\n\x04\x61rg6\x18\x06 \x01(\x03\x12\x0c\n\x04\x61rg7\x18\x07 \x01(\x03\x12\x0c\n\x04\x61rg8\x18\x08 \x01(\x03\"$\n\x12LongOperationReply\x12\x0e\n\x06result\x18\x01 \x01(\x03\".\n\x16StringOperationRequest\x12\x14\n\x0cinput_string\x18\x01 \x01(\t\"-\n\x14StringOperationReply\x12\x15\n\routput_string\x18\x01 \x01(\t\"I\n\x17\x43omplexOperationRequest\x12.\n\rinput_complex\x18\x01 \x01(\x0b\x32\x17.helloworld.ComplexType\"H\n\x15\x43omplexOperationReply\x12/\n\x0eoutput_complex\x18\x01 \x01(\x0b\x32\x17.helloworld.ComplexType\"K\n\x18\x43omplexOperation2Request\x12/\n\rinput_complex\x18\x01 \x01(\x0b\x32\x18.helloworld.ComplexType2\"J\n\x16\x43omplexOperation2Reply\x12\x30\n\x0eoutput_complex\x18\x01 \x01(\x0b\x32\x18.helloworld.ComplexType2\"_\n\x15MultipleStringRequest\x12\n\n\x02s1\x18\x01 \x01(\t\x12\n\n\x02s2\x18\x02 \x01(\t\x12\n\n\x02s3\x18\x03 \x01(\t\x12\n\n\x02s4\x18\x04 \x01(\t\x12\n\n\x02s5\x18\x05 \x01(\t\x12\n\n\x02s6\x18\x06 \x01(\t\"]\n\x13MultipleStringReply\x12\n\n\x02s1\x18\x01 \x01(\t\x12\n\n\x02s2\x18\x02 \x01(\t\x12\n\n\x02s3\x18\x03 \x01(\t\x12\n\n\x02s4\x18\x04 \x01(\t\x12\n\n\x02s5\x18\x05 \x01(\t\x12\n\n\x02s6\x18\x06 \x01(\t2\xd1\x04\n\x07Greeter\x12>\n\x08SayHello\x12\x18.helloworld.HelloRequest\x1a\x16.helloworld.HelloReply\"\x00\x12@\n\x0cVoidFunction\x12\x17.helloworld.VoidRequest\x1a\x15.helloworld.VoidReply\"\x00\x12R\n\x0cLongFunction\x12 .helloworld.LongOperationRequest\x1a\x1e.helloworld.LongOperationReply\"\x00\x12Y\n\x0fStringOperation\x12\".helloworld.StringOperationRequest\x1a .helloworld.StringOperationReply\"\x00\x12\\\n\x10\x43omplexOperation\x12#.helloworld.ComplexOperationRequest\x1a!.helloworld.ComplexOperationReply\"\x00\x12_\n\x11\x43omplexOperation2\x12$.helloworld.ComplexOperation2Request\x1a\".helloworld.ComplexOperation2Reply\"\x00\x12V\n\x0eMultipleString\x12!.helloworld.MultipleStringRequest\x1a\x1f.helloworld.MultipleStringReply\"\x00\x62\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x10helloworld.proto\x12\nhelloworld\"\'\n\x0b\x43omplexType\x12\n\n\x02id\x18\x01 \x01(\x03\x12\x0c\n\x04name\x18\x02 \x01(\t\"\xa2\x01\n\x0c\x43omplexType2\x12\n\n\x02id\x18\x01 \x01(\x03\x12\x0b\n\x03\x61ge\x18\x02 \x01(\x03\x12\x0f\n\x07\x61\x64\x64ress\x18\x03 \x01(\t\x12\x0c\n\x04name\x18\x04 \x01(\t\x12\x0c\n\x04\x66ood\x18\x05 \x01(\t\x12\r\n\x05\x63olor\x18\x06 \x01(\t\x12\x0c\n\x04game\x18\x07 \x01(\t\x12\r\n\x05sport\x18\x08 \x01(\t\x12\x0e\n\x06height\x18\t \x01(\t\x12\x10\n\x08nickname\x18\n \x01(\t\"\x1c\n\x0cHelloRequest\x12\x0c\n\x04name\x18\x01 \x01(\t\"\x1d\n\nHelloReply\x12\x0f\n\x07message\x18\x01 \x01(\t\"\r\n\x0bVoidRequest\"\x0b\n\tVoidReply\"$\n\x14LongOperationRequest\x12\x0c\n\x04\x61rg1\x18\x01 \x01(\x03\"\x87\x01\n\x15Long8OperationRequest\x12\x0c\n\x04\x61rg1\x18\x01 \x01(\x03\x12\x0c\n\x04\x61rg2\x18\x02 \x01(\x03\x12\x0c\n\x04\x61rg3\x18\x03 \x01(\x03\x12\x0c\n\x04\x61rg4\x18\x04 \x01(\x03\x12\x0c\n\x04\x61rg5\x18\x05 \x01(\x03\x12\x0c\n\x04\x61rg6\x18\x06 \x01(\x03\x12\x0c\n\x04\x61rg7\x18\x07 \x01(\x03\x12\x0c\n\x04\x61rg8\x18\x08 \x01(\x03\"$\n\x12LongOperationReply\x12\x0e\n\x06result\x18\x01 \x01(\x03\".\n\x16StringOperationRequest\x12\x14\n\x0cinput_string\x18\x01 \x01(\t\"-\n\x14StringOperationReply\x12\x15\n\routput_string\x18\x01 \x01(\t\"I\n\x17\x43omplexOperationRequest\x12.\n\rinput_complex\x18\x01 \x01(\x0b\x32\x17.helloworld.ComplexType\"H\n\x15\x43omplexOperationReply\x12/\n\x0eoutput_complex\x18\x01 \x01(\x0b\x32\x17.helloworld.ComplexType\"K\n\x18\x43omplexOperation2Request\x12/\n\rinput_complex\x18\x01 \x01(\x0b\x32\x18.helloworld.ComplexType2\"J\n\x16\x43omplexOperation2Reply\x12\x30\n\x0eoutput_complex\x18\x01 \x01(\x0b\x32\x18.helloworld.ComplexType2\"_\n\x15MultipleStringRequest\x12\n\n\x02s1\x18\x01 \x01(\t\x12\n\n\x02s2\x18\x02 \x01(\t\x12\n\n\x02s3\x18\x03 \x01(\t\x12\n\n\x02s4\x18\x04 \x01(\t\x12\n\n\x02s5\x18\x05 \x01(\t\x12\n\n\x02s6\x18\x06 \x01(\t\"!\n\x13MultipleStringReply\x12\n\n\x02s1\x18\x01 \x01(\t2\xa7\x05\n\x07Greeter\x12>\n\x08SayHello\x12\x18.helloworld.HelloRequest\x1a\x16.helloworld.HelloReply\"\x00\x12@\n\x0cVoidFunction\x12\x17.helloworld.VoidRequest\x1a\x15.helloworld.VoidReply\"\x00\x12R\n\x0cLongFunction\x12 .helloworld.LongOperationRequest\x1a\x1e.helloworld.LongOperationReply\"\x00\x12T\n\rLong8Function\x12!.helloworld.Long8OperationRequest\x1a\x1e.helloworld.LongOperationReply\"\x00\x12Y\n\x0fStringOperation\x12\".helloworld.StringOperationRequest\x1a .helloworld.StringOperationReply\"\x00\x12\\\n\x10\x43omplexOperation\x12#.helloworld.ComplexOperationRequest\x1a!.helloworld.ComplexOperationReply\"\x00\x12_\n\x11\x43omplexOperation2\x12$.helloworld.ComplexOperation2Request\x1a\".helloworld.ComplexOperation2Reply\"\x00\x12V\n\x0eMultipleString\x12!.helloworld.MultipleStringRequest\x1a\x1f.helloworld.MultipleStringReply\"\x00\x62\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -33,26 +33,28 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_VOIDREQUEST']._serialized_end=312
   _globals['_VOIDREPLY']._serialized_start=314
   _globals['_VOIDREPLY']._serialized_end=325
-  _globals['_LONGOPERATIONREQUEST']._serialized_start=328
-  _globals['_LONGOPERATIONREQUEST']._serialized_end=462
-  _globals['_LONGOPERATIONREPLY']._serialized_start=464
-  _globals['_LONGOPERATIONREPLY']._serialized_end=500
-  _globals['_STRINGOPERATIONREQUEST']._serialized_start=502
-  _globals['_STRINGOPERATIONREQUEST']._serialized_end=548
-  _globals['_STRINGOPERATIONREPLY']._serialized_start=550
-  _globals['_STRINGOPERATIONREPLY']._serialized_end=595
-  _globals['_COMPLEXOPERATIONREQUEST']._serialized_start=597
-  _globals['_COMPLEXOPERATIONREQUEST']._serialized_end=670
-  _globals['_COMPLEXOPERATIONREPLY']._serialized_start=672
-  _globals['_COMPLEXOPERATIONREPLY']._serialized_end=744
-  _globals['_COMPLEXOPERATION2REQUEST']._serialized_start=746
-  _globals['_COMPLEXOPERATION2REQUEST']._serialized_end=821
-  _globals['_COMPLEXOPERATION2REPLY']._serialized_start=823
-  _globals['_COMPLEXOPERATION2REPLY']._serialized_end=897
-  _globals['_MULTIPLESTRINGREQUEST']._serialized_start=899
-  _globals['_MULTIPLESTRINGREQUEST']._serialized_end=994
-  _globals['_MULTIPLESTRINGREPLY']._serialized_start=996
-  _globals['_MULTIPLESTRINGREPLY']._serialized_end=1089
-  _globals['_GREETER']._serialized_start=1092
-  _globals['_GREETER']._serialized_end=1685
+  _globals['_LONGOPERATIONREQUEST']._serialized_start=327
+  _globals['_LONGOPERATIONREQUEST']._serialized_end=363
+  _globals['_LONG8OPERATIONREQUEST']._serialized_start=366
+  _globals['_LONG8OPERATIONREQUEST']._serialized_end=501
+  _globals['_LONGOPERATIONREPLY']._serialized_start=503
+  _globals['_LONGOPERATIONREPLY']._serialized_end=539
+  _globals['_STRINGOPERATIONREQUEST']._serialized_start=541
+  _globals['_STRINGOPERATIONREQUEST']._serialized_end=587
+  _globals['_STRINGOPERATIONREPLY']._serialized_start=589
+  _globals['_STRINGOPERATIONREPLY']._serialized_end=634
+  _globals['_COMPLEXOPERATIONREQUEST']._serialized_start=636
+  _globals['_COMPLEXOPERATIONREQUEST']._serialized_end=709
+  _globals['_COMPLEXOPERATIONREPLY']._serialized_start=711
+  _globals['_COMPLEXOPERATIONREPLY']._serialized_end=783
+  _globals['_COMPLEXOPERATION2REQUEST']._serialized_start=785
+  _globals['_COMPLEXOPERATION2REQUEST']._serialized_end=860
+  _globals['_COMPLEXOPERATION2REPLY']._serialized_start=862
+  _globals['_COMPLEXOPERATION2REPLY']._serialized_end=936
+  _globals['_MULTIPLESTRINGREQUEST']._serialized_start=938
+  _globals['_MULTIPLESTRINGREQUEST']._serialized_end=1033
+  _globals['_MULTIPLESTRINGREPLY']._serialized_start=1035
+  _globals['_MULTIPLESTRINGREPLY']._serialized_end=1068
+  _globals['_GREETER']._serialized_start=1071
+  _globals['_GREETER']._serialized_end=1750
 # @@protoc_insertion_point(module_scope)

@@ -55,6 +55,11 @@ class GreeterStub(object):
                 request_serializer=helloworld__pb2.LongOperationRequest.SerializeToString,
                 response_deserializer=helloworld__pb2.LongOperationReply.FromString,
                 _registered_method=True)
+        self.Long8Function = channel.unary_unary(
+                '/helloworld.Greeter/Long8Function',
+                request_serializer=helloworld__pb2.Long8OperationRequest.SerializeToString,
+                response_deserializer=helloworld__pb2.LongOperationReply.FromString,
+                _registered_method=True)
         self.StringOperation = channel.unary_unary(
                 '/helloworld.Greeter/StringOperation',
                 request_serializer=helloworld__pb2.StringOperationRequest.SerializeToString,
@@ -100,6 +105,12 @@ class GreeterServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def Long8Function(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
     def StringOperation(self, request, context):
         """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
@@ -140,6 +151,11 @@ def add_GreeterServicer_to_server(servicer, server):
             'LongFunction': grpc.unary_unary_rpc_method_handler(
                     servicer.LongFunction,
                     request_deserializer=helloworld__pb2.LongOperationRequest.FromString,
+                    response_serializer=helloworld__pb2.LongOperationReply.SerializeToString,
+            ),
+            'Long8Function': grpc.unary_unary_rpc_method_handler(
+                    servicer.Long8Function,
+                    request_deserializer=helloworld__pb2.Long8OperationRequest.FromString,
                     response_serializer=helloworld__pb2.LongOperationReply.SerializeToString,
             ),
             'StringOperation': grpc.unary_unary_rpc_method_handler(
@@ -244,6 +260,33 @@ class Greeter(object):
             target,
             '/helloworld.Greeter/LongFunction',
             helloworld__pb2.LongOperationRequest.SerializeToString,
+            helloworld__pb2.LongOperationReply.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def Long8Function(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/helloworld.Greeter/Long8Function',
+            helloworld__pb2.Long8OperationRequest.SerializeToString,
             helloworld__pb2.LongOperationReply.FromString,
             options,
             channel_credentials,

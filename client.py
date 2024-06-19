@@ -16,25 +16,42 @@ def run():
     
         for i in range(1, 10):
             # Chama a função SayHello
-            response, elapsed_time = measure_time(stub.SayHello, helloworld_pb2.HelloRequest(name='Alice'))
+            response, elapsed_time = measure_time(stub.SayHello, helloworld_pb2.HelloRequest(name='Matheus'))
             print(f"Greeter client received: {response.message} (Time taken: {elapsed_time:.9f} seconds)")
 
             # Chama a função VoidFunction
             void_response, elapsed_time = measure_time(stub.VoidFunction, helloworld_pb2.VoidRequest())
             print(f"Void function called (Time taken: {elapsed_time:.9f} seconds)")
-
+            
             # Chama a função LongFunction
-            long_function_request = helloworld_pb2.LongOperationRequest(
-                arg1=1245123123, arg2=1245123123, arg3=1245123123, arg4=1245123123, arg5=1245123123, arg6=1245123123, arg7=1245123123, arg8=1245123123
-            )
+            long_function_request = helloworld_pb2.LongOperationRequest(arg1=1245123123)
             long_function_response, elapsed_time = measure_time(stub.LongFunction, long_function_request)
             print(f"Long function result: {long_function_response.result} (Time taken: {elapsed_time:.9f} seconds)")
+
+            # Chama a função Long8Function
+            long8_function_request = helloworld_pb2.Long8OperationRequest(
+                arg1=1245123123, arg2=1245123123, arg3=1245123123, arg4=1245123123, arg5=1245123123, arg6=1245123123, arg7=1245123123, arg8=1245123123
+            )
+            long8_function_response, elapsed_time = measure_time(stub.Long8Function, long8_function_request)
+            print(f"Long8 function result: {long8_function_response.result} (Time taken: {elapsed_time:.9f} seconds)")
 
             # Chama a função StringOperation
             test_string = "hello"
             string_operation_request = helloworld_pb2.StringOperationRequest(input_string=test_string)
             string_operation_response, elapsed_time = measure_time(stub.StringOperation, string_operation_request)
-            print(f"String operation result: {string_operation_response.output_string} (Time taken: {elapsed_time:.9f} seconds)")
+            print(f"String operation hello * 1 (Time taken: {elapsed_time:.9f} seconds)")
+            
+            # Chama a função StringOperation
+            test_string = test_string * 512
+            string_operation_request = helloworld_pb2.StringOperationRequest(input_string=test_string)
+            string_operation_response, elapsed_time = measure_time(stub.StringOperation, string_operation_request)
+            print(f"String operation hello * 512 (Time taken: {elapsed_time:.9f} seconds)")
+            
+             # Chama a função StringOperation
+            test_string = test_string * 1024
+            string_operation_request = helloworld_pb2.StringOperationRequest(input_string=test_string)
+            string_operation_response, elapsed_time = measure_time(stub.StringOperation, string_operation_request)
+            print(f"String operation hello * 1024 (Time taken: {elapsed_time:.9f} seconds)")
 
             # Chama a função ComplexOperation
             complex_object = helloworld_pb2.ComplexType(

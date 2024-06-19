@@ -28,7 +28,9 @@ service Greeter {
   rpc VoidFunction (VoidRequest) returns (VoidReply) {}
 
   rpc LongFunction (LongOperationRequest) returns (LongOperationReply) {}
-  
+
+  rpc Long8Function (Long8OperationRequest) returns (LongOperationReply) {}
+
   rpc StringOperation (StringOperationRequest) returns (StringOperationReply) {}
 
   rpc ComplexOperation (ComplexOperationRequest) returns (ComplexOperationReply) {}
@@ -54,6 +56,10 @@ message VoidRequest {}
 message VoidReply {}
 
 message LongOperationRequest {
+  int64 arg1 = 1;
+}
+
+message Long8OperationRequest {
   int64 arg1 = 1;
   int64 arg2 = 2;
   int64 arg3 = 3;
@@ -104,9 +110,4 @@ message MultipleStringRequest{
 
 message MultipleStringReply{
   string s1 = 1;
-  string s2 = 2;
-  string s3 = 3;
-  string s4 = 4;
-  string s5 = 5;
-  string s6 = 6;
 }

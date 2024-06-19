@@ -11,6 +11,9 @@ class Greeter(helloworld_pb2_grpc.GreeterServicer):
         return helloworld_pb2.VoidReply()
     
     def LongFunction(self, request, context):
+        return helloworld_pb2.LongOperationReply(result=request.arg1)
+    
+    def Long8Function(self, request, context):
         result = sum(getattr(request, f'arg{i}') for i in range(1, 9))
         return helloworld_pb2.LongOperationReply(result=result)
     
@@ -31,7 +34,7 @@ class Greeter(helloworld_pb2_grpc.GreeterServicer):
         input_complex = request.input_complex
         output_complex = helloworld_pb2.ComplexType2(
             id=input_complex.id + 1,
-            age=input_complex.age,
+            age=input_complex.age + 1,
             address=input_complex.address,
             name=input_complex.name.upper(),
             food=input_complex.food,
@@ -44,7 +47,7 @@ class Greeter(helloworld_pb2_grpc.GreeterServicer):
         return helloworld_pb2.ComplexOperation2Reply(output_complex=output_complex)
     
     def MultipleString(self, request, context):
-        return helloworld_pb2.MultipleStringReply(s1=request.s1, s2=request.s2, s3=request.s3, s4=request.s4, s5=request.s5, s6=request.s6)
+        return helloworld_pb2.MultipleStringReply(s1=request.s1 + request.s2 + request.s3 + request.s4 + request.s5 + request.s6)
 
 
 def serve():
