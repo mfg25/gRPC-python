@@ -36,19 +36,19 @@ def run():
             print(f"Long8 function result: {long8_function_response.result} (Time taken: {elapsed_time:.9f} seconds)")
 
             # Chama a função StringOperation
-            test_string = "hello"
+            test_string = "hello world"
             string_operation_request = helloworld_pb2.StringOperationRequest(input_string=test_string)
             string_operation_response, elapsed_time = measure_time(stub.StringOperation, string_operation_request)
             print(f"String operation hello * 1 (Time taken: {elapsed_time:.9f} seconds)")
             
             # Chama a função StringOperation
-            test_string = test_string * 512
+            test_string = "hello world" * 512
             string_operation_request = helloworld_pb2.StringOperationRequest(input_string=test_string)
             string_operation_response, elapsed_time = measure_time(stub.StringOperation, string_operation_request)
             print(f"String operation hello * 512 (Time taken: {elapsed_time:.9f} seconds)")
             
              # Chama a função StringOperation
-            test_string = test_string * 1024
+            test_string = "hello world" * 1024
             string_operation_request = helloworld_pb2.StringOperationRequest(input_string=test_string)
             string_operation_response, elapsed_time = measure_time(stub.StringOperation, string_operation_request)
             print(f"String operation hello * 1024 (Time taken: {elapsed_time:.9f} seconds)")
